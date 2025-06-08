@@ -1,6 +1,17 @@
 fn main() {
     println!("Hello, world!");
 
+
+    let circle = Shape::Circle(5.0);
+    let square = Shape::Square(4.0);
+    let rectangle = Shape::Rectangle(10.0, 20.0);
+    let area_of_circle = calculate_area(circle);
+    let area_of_square = calculate_area(square);
+    let area_of_rectangle = calculate_area(rectangle);
+    
+    println!("The area of the circle, square and rectangle is: {}, {}, {}", area_of_circle, area_of_square, area_of_rectangle);
+
+
     let rect = Rect {
         width: 40,
         height: 50
@@ -13,15 +24,15 @@ fn main() {
     println!("Debugging the rectangle struct: {}", Rect::debug());
 
 
-    // let user = User {
-    //     first_name: String::from("Jaishree"),
-    //     last_name: String::from("Tiwari"),
-    //     age: 21,
-    // };
+    let user = User {
+        first_name: String::from("Jaishree"),
+        last_name: String::from("Tiwari"),
+        age: 21,
+    };
 
-    // print!("First Name: {}, Last Name: {}, Age: {}\n", 
-    //     user.first_name, user.last_name, user.age
-    // );
+    print!("First Name: {}, Last Name: {}, Age: {}\n", 
+        user.first_name, user.last_name, user.age
+    );
     
     // let my_string = String::from("Jaishree");
     // let length = get_str_length(my_string);
@@ -29,7 +40,41 @@ fn main() {
 
     // println!("{}", is_even(4));
     // println!("{}", fib(4))
+
+    // let color = my_color::Red;
+
+    // let message = choose_color(color);
+
+    // println!("{}", message);
 }
+
+enum Shape {
+    Circle(f64), // f64 is a 64-bit floating point number for radius
+    Square(f64), // f64 for side length
+    Rectangle(f64, f64), // Tuple struct with two f64 values for width and height
+}
+
+fn calculate_area(shape: Shape) -> f64 {
+   let result = match shape {
+    Shape::Circle(r) => 3.14 * r * r,
+    Shape::Square(s) => s * s,
+    Shape::Rectangle(w, h) => w * h,
+   };
+   return result;
+}
+// enum my_color {
+//     Red,
+//     Green,
+//     Blue,
+// }
+
+// fn choose_color(color: my_color) -> String {
+//     match color {
+//         my_color::Red => String::from("You chose Red!"),
+//         my_color::Green => String::from("You chose Green!"),
+//         my_color::Blue => String::from("You chose Blue!"),
+//     }
+// }
 
 struct Rect {
     width: u32,
@@ -51,12 +96,12 @@ impl Rect {
     }
 }
 
-// // Structs are used to create custom data types in Rust
-// struct User {
-//     first_name: String,
-//     last_name: String,
-//     age: u32,
-// }
+// Structs are used to create custom data types in Rust
+struct User {
+    first_name: String,
+    last_name: String,
+    age: u32,
+}
 
 // fn get_str_length(str: String) -> usize {
 //     str.chars().count()
