@@ -1,7 +1,14 @@
-use std::fs::read_to_string;
+// use std::fs::read_to_string;
+use chrono::{Local, Utc};
 
 fn main() {
     println!("Hello, world!");
+
+    let now = Utc::now();
+    println!("the Utc time is {}", now);
+
+    let local = Local::now();
+    println!("the local time is {}", local);
 
 
     // let circle = Shape::Circle(5.0);
@@ -49,28 +56,28 @@ fn main() {
 
     // println!("{}", message);
 
-    let index = find_first_a(String::from("shree"));
-    match index {
-        Some(value) => println!("The first 'a' is at index: {}", value),
-        None => println!("No 'a' found in the string"),
-    }
+    // let index = find_first_a(String::from("shree"));
+    // match index {
+    //     Some(value) => println!("The first 'a' is at index: {}", value),
+    //     None => println!("No 'a' found in the string"),
+    // }
 
-    let result = read_to_string("example.txt");
-    match result {
-        Ok(value) => println!("File content: {}", value),
-        Err(e) => println!("Error reading file: {}", e),
-    }
+    // let result = read_to_string("example.txt");
+    // match result {
+    //     Ok(value) => println!("File content: {}", value),
+    //     Err(e) => println!("Error reading file: {}", e),
+    // }
 }
 
-fn find_first_a(s: String) -> Option<i32> {
-    for (index, char) in s.chars().enumerate() {
-        if char == 'a' {
-            return Some(index as i32);
-        }
-    }
+// fn find_first_a(s: String) -> Option<i32> {
+//     for (index, char) in s.chars().enumerate() {
+//         if char == 'a' {
+//             return Some(index as i32);
+//         }
+//     }
 
-    return None;
-}
+//     return None;
+// }
 
 // enum Shape {
 //     Circle(f64), // f64 is a 64-bit floating point number for radius
