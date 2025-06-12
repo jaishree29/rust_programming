@@ -1,19 +1,26 @@
 // use std::fs::read_to_string;
-use chrono::{Local, Utc};
+// use chrono::{Local, Utc};
 
 fn main() {
-    println!("Hello, world!");
+    // println!("Hello, world!");
 
-    let now = Utc::now();
-    println!("the Utc time is {}", now);
+    // let now = Utc::now();
+    // println!("the Utc time is {}", now);
 
-    let local = Local::now();
-    println!("the local time is {}", local);
+    // let local = Local::now();
+    // println!("the local time is {}", local);
 
-    let mut s1 = String::from("Jaishree ");
-    do_something(&mut s1);
-    println!("{}", s1);
+    // let mut s1 = String::from("Jaishree ");
+    // do_something(&mut s1);
+    // println!("{}", s1);
 
+
+    //Vectors are stored in the heap not on the stack
+    let mut vec = Vec::new();
+    vec.push(1);
+    vec.push(2);
+    vec.push(3);
+    println!("{:?}", vec);
 
 
     // let circle = Shape::Circle(5.0);
@@ -74,11 +81,11 @@ fn main() {
     // }
 }
 
-fn do_something(s2: &mut String) {
-    s2.push_str("Tiwari");
-    println!("{}", s2);
-    // return s2;
-}
+// fn do_something(s2: &mut String) {
+//     s2.push_str("Tiwari");
+//     println!("{}", s2);
+//     // return s2;
+// }
 
 // fn find_first_a(s: String) -> Option<i32> {
 //     for (index, char) in s.chars().enumerate() {
