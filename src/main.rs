@@ -22,6 +22,8 @@ fn main() {
     vec.push(3);
     println!("{:?}", vec);
 
+    println!("{:?}", even_vec(vec));
+
 
     // let circle = Shape::Circle(5.0);
     // let square = Shape::Square(4.0);
@@ -79,6 +81,18 @@ fn main() {
     //     Ok(value) => println!("File content: {}", value),
     //     Err(e) => println!("Error reading file: {}", e),
     // }
+}
+
+fn even_vec(vec: Vec<i32>) -> Vec<i32> {
+    let mut new_vec = Vec::new();
+    for i in vec {
+        if i%2 == 0 {
+            new_vec.push(i);
+        }
+    }
+
+    return new_vec;
+
 }
 
 // fn do_something(s2: &mut String) {
