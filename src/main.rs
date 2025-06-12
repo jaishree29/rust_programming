@@ -10,6 +10,11 @@ fn main() {
     let local = Local::now();
     println!("the local time is {}", local);
 
+    let mut s1 = String::from("Jaishree ");
+    do_something(&mut s1);
+    println!("{}", s1);
+
+
 
     // let circle = Shape::Circle(5.0);
     // let square = Shape::Square(4.0);
@@ -67,6 +72,12 @@ fn main() {
     //     Ok(value) => println!("File content: {}", value),
     //     Err(e) => println!("Error reading file: {}", e),
     // }
+}
+
+fn do_something(s2: &mut String) {
+    s2.push_str("Tiwari");
+    println!("{}", s2);
+    // return s2;
 }
 
 // fn find_first_a(s: String) -> Option<i32> {
